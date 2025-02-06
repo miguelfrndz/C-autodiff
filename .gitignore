@@ -1,0 +1,9 @@
+.DS_Store
+.vscode/
+*.so
+*.o
+*.a
+*.out
+*.exe
+*.dll
+*.bin
