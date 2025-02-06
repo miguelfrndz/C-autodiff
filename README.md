@@ -4,9 +4,11 @@ Basic implementation of a simple auto-differentiation engine in C. Includes forw
 ## Example: Normal Log-Likelihood
 
 As a practical example to test our code, let us consider the log-likelihood function of a Normal (Gaussian) distribution. For an observed variable $x$, the log-likelihood is given by:
+
 $$
 f(x,\mu, \sigma)=-\dfrac{1}{2}\left(\dfrac{x-\mu}{\sigma}\right)^2-\log(\sigma)-\dfrac{1}{2}\log(2\pi)
 $$
+
 where $\mu$ and $\sigma$ are the mean and standard deviation, respectively. Our goal is to compute the derivatives at the point $(x=10, \mu=5, \sigma=2)$.
 
 ### Forward-Mode (`dual`)
