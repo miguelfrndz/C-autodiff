@@ -1,6 +1,6 @@
 # Auto-Differentiation Engine in C
-Toy example of a possible implementation of an auto-differentiation engine in C.
+Basic implementation of a simple auto-differentiation engine in C. Includes forward-mode (using the `dual` type) and reverse-mode (using the `Var` type).
 
 ## TODO: Pending Tasks
-* Add reverse mode!
-* Implement a parser to generate the expression graph based on any function definition (to overcome lack of operator overloading in C)
+* Implement a parser to generate the expression graph based on any function definition (to overcome lack of operator overloading in C).
+* Make a Python interface to deploy the library.
