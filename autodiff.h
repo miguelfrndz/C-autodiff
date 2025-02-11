@@ -71,4 +71,4 @@ extern Var* var_pow3(Var *a);
 extern void var_pow4_backward(Var *v);
 extern Var* var_pow4(Var *a);
 
-#endif
+#endif // AUTO_DIFF_H
