@@ -5,6 +5,10 @@
 
 namespace autodiff {
 
+    // ====================================================
+    // Forward-mode autodiff: Dual number class definition
+    // ====================================================
+
     dual::dual(double val, double dv) {
         this->val = val;
         this->dv = dv;
@@ -35,6 +39,16 @@ namespace autodiff {
         } else {
             std::cout << "Name: " << name << ", Value: " << val << ", Gradient: " << dv << std::endl;
         }
+    }
+
+    std::ostream& operator<<(std::ostream &os, const dual &d) {
+        if (d.name.empty()) {
+            os << "Name: (No Name Available)" << ", Value: " << d.val << ", Gradient: " << d.dv;
+        } else {
+            os << "Name: " << d.name << ", Value: " << d.val << ", Gradient: " << d.dv;
+        }
+        os << std::endl;
+        return os;
     }
 
     dual dual::operator+(const dual &other) const {
@@ -89,4 +103,11 @@ namespace autodiff {
         return dual(x.val * x.val * x.val * x.val, 4 * x.val * x.val * x.val * x.dv);
     }
 
+    // ====================================================
+    // Reverse-mode autodiff: Var class definition
+    // ====================================================
+
+    tape_t tape;
+
+    // TODO: Not yet implemented...
 }

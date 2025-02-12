@@ -29,7 +29,8 @@ int main(int argc, char const *argv[]) {
     dual f_test = functionTest(x_test);
     f_test.name = "test_function";
     std::cout << "sin(x)*cos(x)*x**2:" << std::endl;
-    f_test.print();
+    // f_test.print();
+    std::cout << f_test;
 
     dual x = dual(10.0, "x");
     dual mu = dual(5.0, 1.0, "mu"); // mu is the variable of interest
@@ -40,6 +41,6 @@ int main(int argc, char const *argv[]) {
     f.print();
 
     // Reverse-Mode Examples
-    // TODO: Implement reverse-mode autodiff
+    // TODO: Not Yet Implemented...
     return 0;
 }

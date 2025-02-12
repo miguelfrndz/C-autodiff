@@ -1,16 +1,5 @@
-# Auto-Differentiation Engine in C
-Basic implementation of a simple auto-differentiation engine in C. Includes forward-mode (using the `dual` type) and reverse-mode (using the `Var` type).
-
-## How-to-Run?
-
-- To build the `C` version:
-```bash
-make
-```
-- To build the `C++` version:
-```bash
-make cpp
-```
+# Auto-Differentiation Engine in C/C++
+Basic implementation of a simple auto-differentiation engine in C/C++. Includes forward-mode (using the `dual` type) and reverse-mode (using the `Var` type).
 
 ## Example: Normal Log-Likelihood
 
@@ -115,6 +104,17 @@ free_tape();
 
 ### Reverse-Mode (`Val`) in `C++`
 Not yet implemented.
+
+## How-to-Run?
+
+- To build the `C` version:
+```bash
+make
+```
+- To build the `C++` version:
+```bash
+make cpp
+```
 
 ## TODO: Pending Tasks
 * Implement a parser to generate the expression graph based on any function definition (to overcome lack of operator overloading in C).

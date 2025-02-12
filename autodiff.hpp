@@ -1,42 +1,26 @@
 #ifndef AUTO_DIFF_HPP
 #define AUTO_DIFF_HPP
 
+#include <vector>
+
 namespace autodiff {
     // ====================================================
     // Forward-mode autodiff: Dual number class declaration
     // ====================================================
 
-    /*
-    Dual Variable for Forward-Mode Autodiff.
-    */
     class dual {
         public:
             double val;
             double dv;
             std::string name;
             
-            /*
-            Constructor for dual variable.
-
-            @param val Value of the dual variable.
-            @param dv Derivative of the dual variable.
-            */
             dual(double val, double dv);
-
-            /*
-            Constructor for dual variable with name.
-
-            @param val Value of the dual variable.
-            @param dv Derivative of the dual variable.
-            @param name Name of the dual variable.
-            */
             dual(double val, double dv, const std::string &name);
-
-            dual (double val);
-
-            dual (double val, const std::string &name);
+            dual(double val);
+            dual(double val, const std::string &name);
 
             void print() const;
+            friend std::ostream& operator<<(std::ostream &os, const dual &d);
 
             dual operator+(const dual &other) const;
             dual operator-(const dual &other) const;
@@ -57,6 +41,12 @@ namespace autodiff {
     // ====================================================
     // Reverse-mode autodiff: Var class declaration
     // ====================================================
+
+    class Var;
+    using VarPtr = Var*;
+    constexpr size_t TAPE_SIZE = 10000;
+    using tape_t = std::vector<VarPtr>;
+    extern tape_t tape;
 }
 
 #endif // AUTO_DIFF_HPP
